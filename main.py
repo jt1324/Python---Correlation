@@ -47,3 +47,10 @@ df['budget'] = df['budget'].astype('Int64')
 df['gross'] = df['gross'].astype('Int64')
 
 print(df.dtypes)
+print(df.head().T)
+
+
+# Create new column - correct year
+
+df['yearcorrect'] = df['released'].astype(str).str.extract(r'(\d{4})', expand=False)
+print(df.head().T)
