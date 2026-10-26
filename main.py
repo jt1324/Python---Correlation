@@ -3,6 +3,7 @@
 from ast import increment_lineno
 import pandas as pd
 import seaborn as sns
+import numpy as np
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -25,5 +26,11 @@ df = pd.read_csv(r'movies.csv')
 
 # Look to the data
 
-print(df.head())
+# print(df.head().T)
 
+
+# Checking for missing data
+
+for col in df.columns:
+    pct_missing = np.mean(df[col].isnull())
+    print(f'{col} - {pct_missing:.2f}%')
