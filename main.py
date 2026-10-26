@@ -26,7 +26,7 @@ df = pd.read_csv(r'movies.csv')
 
 # Look to the data
 
-# print(df.head().T)
+print(df.head().T)
 
 
 # Checking for missing data
@@ -34,3 +34,8 @@ df = pd.read_csv(r'movies.csv')
 for col in df.columns:
     pct_missing = np.mean(df[col].isnull())
     print(f'{col} - {pct_missing:.2f}%')
+
+
+# Data types - columns
+
+print(df.dtypes)
