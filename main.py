@@ -39,3 +39,11 @@ for col in df.columns:
 # Data types - columns
 
 print(df.dtypes)
+
+
+# Changing data types
+
+df['budget'] = df['budget'].astype('Int64')
+df['gross'] = df['gross'].astype('Int64')
+
+print(df.dtypes)
