@@ -25,3 +25,5 @@ df = pd.read_csv(r'movies.csv')
 
 # Look to the data
 
+print(df.head())
+
