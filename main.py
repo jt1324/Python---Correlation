@@ -54,3 +54,9 @@ print(df.head().T)
 
 df['yearcorrect'] = df['released'].astype(str).str.extract(r'(\d{4})', expand=False)
 print(df.head().T)
+
+
+# Order data
+
+df.sort_values(by=['gross'], inplace=True, ascending=False)
+print(df.head().T)
