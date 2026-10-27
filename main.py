@@ -60,3 +60,9 @@ print(df.head().T)
 
 df.sort_values(by=['gross'], inplace=True, ascending=False)
 print(df.head().T)
+
+
+# Display the entire data
+
+pd.set_option('display.max_rows', None)
+print(df)
