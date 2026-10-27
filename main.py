@@ -97,4 +97,9 @@ print(df.corr(method='spearman', numeric_only=True))    # spearman
 
 correlation_matrix = df.corr(numeric_only=True)
 sns.heatmap(correlation_matrix, annot = True)
+plt.title('Correlation Matrix for Numeric Features')
+plt.xlabel('Movie Features')
+plt.ylabel('Movie Features')
 plt.show()
+
+
