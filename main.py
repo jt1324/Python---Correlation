@@ -75,3 +75,14 @@ print(df['company'].drop_duplicates().sort_values(ascending=False))
 #df.drop_duplicates()                                               # delete duplicates base on all the columns
 
 
+# Budget hight correlation
+# Scatter plot with budget vs gross
+
+plt.scatter(x=df['budget'], y=df['gross'])
+plt.title('Budget vs Gross')
+plt.xlabel('Budget')
+plt.ylabel('Gross')
+plt.show()
+
+# Plot budget vc gross using seaborn
+sns.
