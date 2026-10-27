@@ -66,3 +66,12 @@ print(df.head().T)
 
 pd.set_option('display.max_rows', None)
 print(df)
+
+
+# Checking for duplicates 
+
+print(df['company'].drop_duplicates().sort_values(ascending=False))
+
+#df.drop_duplicates()                                               # delete duplicates base on all the columns
+
+
