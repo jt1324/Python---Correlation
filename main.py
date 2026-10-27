@@ -103,3 +103,14 @@ plt.ylabel('Movie Features')
 plt.show()
 
 
+# Looking at company
+# create a numeric identifier fiel to add all columns to the chart
+
+df_numerized = df
+
+for col_name in df_numerized.columns:
+    if(df_numerized[col_name].dtype == 'object'):
+        df_numerized[col_name] = df_numerized[col_name].astype('category')
+        df_numerized[col_name] = df_numerized[col_name].cat.codes
+
+print(df_numerized)
