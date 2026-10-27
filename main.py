@@ -104,13 +104,23 @@ plt.show()
 
 
 # Looking at company
-# create a numeric identifier fiel to add all columns to the chart
+# Create a numeric identifier fiel to add all columns to the chart
 
-df_numerized = df
+df_numerized = df.copy()
 
 for col_name in df_numerized.columns:
-    if(df_numerized[col_name].dtype == 'object'):
+    if df_numerized[col_name].dtype == 'object' or str(df_numerized[col_name].dtype) == 'str':
         df_numerized[col_name] = df_numerized[col_name].astype('category')
         df_numerized[col_name] = df_numerized[col_name].cat.codes
 
 print(df_numerized)
+
+correlation_matrix_total = df_numerized.corr(numeric_only=True)
+sns.heatmap(correlation_matrix_total, annot = True, fmt='.2f')
+plt.title('Correlation Matrix for Numeric Features')
+plt.xlabel('Movie Features')
+plt.ylabel('Movie Features')
+plt.show()
+
+
+
