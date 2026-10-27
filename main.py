@@ -82,7 +82,10 @@ plt.scatter(x=df['budget'], y=df['gross'])
 plt.title('Budget vs Gross')
 plt.xlabel('Budget')
 plt.ylabel('Gross')
-plt.show()
+# plt.show()
 
 # Plot budget vc gross using seaborn
-sns.
+sns.regplot(x='budget', y='gross', data=df, scatter_kws={"color": "orange"}, line_kws={"color": "blue"})
+plt.show()
+
+
