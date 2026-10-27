@@ -89,3 +89,12 @@ sns.regplot(x='budget', y='gross', data=df, scatter_kws={"color": "orange"}, lin
 plt.show()
 
 
+# Checking correlations - pearson(default) | kendall | spearman
+
+print(df.corr(numeric_only=True))                       # pearson
+print(df.corr(method='kendall', numeric_only=True))     # kendall
+print(df.corr(method='spearman', numeric_only=True))    # spearman
+
+correlation_matrix = df.corr(numeric_only=True)
+sns.heatmap(correlation_matrix, annot = True)
+plt.show()
