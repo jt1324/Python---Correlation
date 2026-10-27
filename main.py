@@ -122,5 +122,11 @@ plt.xlabel('Movie Features')
 plt.ylabel('Movie Features')
 plt.show()
 
+correlation_mat = df_numerized.corr()
+corr_pairs = correlation_mat.unstack()
+sorted_corr_pairs = corr_pairs.sort_values()
+print(sorted_corr_pairs)
 
+high_corr = sorted_corr_pairs[(sorted_corr_pairs > 0.5) & (sorted_corr_pairs < 0.99)].sort_values(ascending=False)
+print(high_corr)
 
